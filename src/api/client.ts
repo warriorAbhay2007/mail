@@ -13,8 +13,10 @@ import {
   ScheduleMode,
 } from '../shared/types';
 import { StopOnReplyResult } from '../shared/scheduler';
+import { handleLocalFallbackRequest } from './localFallbackStore';
 
 let inMemoryToken: string | null = null;
+let backendUnavailable = false;
 
 export function setAccessToken(token: string | null): void {
   inMemoryToken = token;
@@ -24,7 +26,15 @@ export function getAccessToken(): string | null {
   return inMemoryToken;
 }
 
+export function resetBackendAvailability(): void {
+  backendUnavailable = false;
+}
+
 async function apiRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
+  if (backendUnavailable) {
+    return handleLocalFallbackRequest<T>(path, init);
+  }
+
   const headers = new Headers(init.headers);
   if (!headers.has('Content-Type') && init.body) {
     headers.set('Content-Type', 'application/json');
@@ -33,13 +43,38 @@ async function apiRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
     headers.set('Authorization', `Bearer ${inMemoryToken}`);
   }
 
-  const res = await fetch(path, {
-    ...init,
-    headers,
-    credentials: 'include',
-  });
+  let res: Response;
+  try {
+    res = await fetch(path, {
+      ...init,
+      headers,
+      credentials: 'include',
+    });
+  } catch {
+    backendUnavailable = true;
+    return handleLocalFallbackRequest<T>(path, init);
+  }
 
-  const data = await res.json().catch(() => ({}));
+  const contentType = res.headers.get('content-type') || '';
+  const isJson = contentType.includes('application/json');
+  const data = isJson ? await res.json().catch(() => ({})) : {};
+
+  // Static hosting / missing backend API returns 404/405/501 without JSON { error } or serves HTML SPA fallback
+  const hasStructuredApiError =
+    isJson &&
+    typeof (data as { error?: unknown }).error === 'string' &&
+    Boolean((data as { error: string }).error.trim());
+
+  if (
+    (!isJson && (res.ok || res.status === 404 || res.status === 405 || res.status === 501 || res.status === 502 || res.status === 503 || res.status === 504)) ||
+    (res.status === 404 && !hasStructuredApiError) ||
+    res.status === 405 ||
+    res.status === 501
+  ) {
+    backendUnavailable = true;
+    return handleLocalFallbackRequest<T>(path, init);
+  }
+
   if (!res.ok) {
     throw new Error((data as { error?: string }).error || `Request failed (${res.status})`);
   }

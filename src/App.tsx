@@ -56,29 +56,41 @@ export default function App() {
   }, [darkMode]);
 
   const refreshOtpVault = useCallback(async () => {
-    const res = await api.listActiveOtpVault();
-    setOtpEntries(res.entries);
+    try {
+      const res = await api.listActiveOtpVault();
+      setOtpEntries(res.entries);
+    } catch {
+      // Handled safely without unhandled rejection
+    }
   }, []);
 
   const refreshMailsAndOtp = useCallback(async () => {
-    const [mRes, oRes] = await Promise.all([api.listMails(), api.listActiveOtpVault()]);
-    setMails(mRes.mails);
-    setOtpEntries(oRes.entries);
+    try {
+      const [mRes, oRes] = await Promise.all([api.listMails(), api.listActiveOtpVault()]);
+      setMails(mRes.mails);
+      setOtpEntries(oRes.entries);
+    } catch {
+      // Handled safely without unhandled rejection
+    }
   }, []);
 
   const loadWorkspaceData = useCallback(async () => {
-    const [mRes, oRes, sRes, cRes, chRes] = await Promise.all([
-      api.listMails(),
-      api.listActiveOtpVault(),
-      api.listSchedules(),
-      api.listCategories(),
-      api.listChats(),
-    ]);
-    setMails(mRes.mails);
-    setOtpEntries(oRes.entries);
-    setSchedules(sRes.schedules);
-    setCategories(cRes.categories);
-    setChats(sortChats(chRes.chats));
+    try {
+      const [mRes, oRes, sRes, cRes, chRes] = await Promise.all([
+        api.listMails(),
+        api.listActiveOtpVault(),
+        api.listSchedules(),
+        api.listCategories(),
+        api.listChats(),
+      ]);
+      setMails(mRes.mails);
+      setOtpEntries(oRes.entries);
+      setSchedules(sRes.schedules);
+      setCategories(cRes.categories);
+      setChats(sortChats(chRes.chats));
+    } catch {
+      // Handled safely without unhandled rejection
+    }
   }, []);
 
   useEffect(() => {
@@ -98,6 +110,8 @@ export default function App() {
         if (cancelled) return;
         setUser(authedUser);
         await loadWorkspaceData();
+      } catch {
+        if (!cancelled) setUser(null);
       } finally {
         if (!cancelled) setInitializing(false);
       }
@@ -112,7 +126,7 @@ export default function App() {
   useEffect(() => {
     if (!user || activeView !== 'schedule') return;
     const timer = setInterval(() => {
-      void api.listSchedules().then((r) => setSchedules(r.schedules));
+      void api.listSchedules().then((r) => setSchedules(r.schedules)).catch(() => {});
     }, 6000);
     return () => clearInterval(timer);
   }, [user, activeView]);
@@ -145,14 +159,22 @@ export default function App() {
   };
 
   const handleTogglePinChat = async (chatId: string, currentPinned: boolean) => {
-    const res = await api.updateChat(chatId, { pinned: !currentPinned });
-    handleChatUpdated(res.chat);
+    try {
+      const res = await api.updateChat(chatId, { pinned: !currentPinned });
+      handleChatUpdated(res.chat);
+    } catch {
+      // Handled safely without unhandled rejection
+    }
   };
 
   const handleDeleteChat = async (chatId: string) => {
-    await api.deleteChat(chatId);
-    setChats((prev) => prev.filter((c) => c.id !== chatId));
-    if (activeChatId === chatId) setActiveChatId(null);
+    try {
+      await api.deleteChat(chatId);
+      setChats((prev) => prev.filter((c) => c.id !== chatId));
+      if (activeChatId === chatId) setActiveChatId(null);
+    } catch {
+      // Handled safely without unhandled rejection
+    }
   };
 
   const handleNewChat = () => {
@@ -191,7 +213,7 @@ export default function App() {
       <div className="flex h-screen items-center justify-center bg-[var(--bg-canvas)] text-[var(--text-secondary)]">
         <div className="flex items-center gap-2.5 text-sm font-medium">
           <Loader2 className="h-5 w-5 animate-spin text-[var(--accent-primary)]" />
-          <span>Loading Meridian Mail Workspace...</span>
+          <span>Loading POSTLYai Workspace...</span>
         </div>
       </div>
     );
@@ -355,7 +377,7 @@ export default function App() {
               promptPrefill={promptPrefill}
               onClearPromptPrefill={() => setPromptPrefill(null)}
               onChatUpdated={handleChatUpdated}
-              onScheduleCreated={() => void api.listSchedules().then((r) => setSchedules(r.schedules))}
+              onScheduleCreated={() => void api.listSchedules().then((r) => setSchedules(r.schedules)).catch(() => {})}
               onOpenScheduleBuilder={(rule) => {
                 if (rule) setSchedulePrefill(rule);
                 setActiveView('schedule');
@@ -373,15 +395,18 @@ export default function App() {
               schedules={schedules}
               initialCategoryFilter={mailFilterOverride}
               onMailsChanged={() => void refreshMailsAndOtp()}
-              onSchedulesChanged={() => void api.listSchedules().then((r) => setSchedules(r.schedules))}
+              onSchedulesChanged={() => void api.listSchedules().then((r) => setSchedules(r.schedules)).catch(() => {})}
               onOtpConsumed={() => void refreshOtpVault()}
               onSendToAgent={(prefill) => {
                 setActiveChatId(null);
                 setActiveView('new-tab');
                 // Execute directly if valid trigger
-                void api.executeAgent(prefill, null).then((res) => {
-                  handleChatUpdated(res.chat);
-                });
+                void api
+                  .executeAgent(prefill, null)
+                  .then((res) => {
+                    handleChatUpdated(res.chat);
+                  })
+                  .catch(() => {});
               }}
             />
           ) : activeView === 'digest' ? (
@@ -395,9 +420,12 @@ export default function App() {
               onTriggerAgentCommand={(cmd) => {
                 setActiveChatId(null);
                 setActiveView('new-tab');
-                void api.executeAgent(cmd, null).then((res) => {
-                  handleChatUpdated(res.chat);
-                });
+                void api
+                  .executeAgent(cmd, null)
+                  .then((res) => {
+                    handleChatUpdated(res.chat);
+                  })
+                  .catch(() => {});
               }}
             />
           ) : activeView === 'schedule' ? (
@@ -405,14 +433,14 @@ export default function App() {
               schedules={schedules}
               prefillRule={schedulePrefill}
               onClearPrefill={() => setSchedulePrefill(null)}
-              onSchedulesChanged={() => void api.listSchedules().then((r) => setSchedules(r.schedules))}
+              onSchedulesChanged={() => void api.listSchedules().then((r) => setSchedules(r.schedules)).catch(() => {})}
               onReplySimulated={() => void refreshMailsAndOtp()}
             />
           ) : (
             <CategoryManager
               categories={categories}
               mails={mails}
-              onCategoriesChanged={() => void api.listCategories().then((r) => setCategories(r.categories))}
+              onCategoriesChanged={() => void api.listCategories().then((r) => setCategories(r.categories)).catch(() => {})}
               onMailsChanged={() => void refreshMailsAndOtp()}
               onFilterInMailViewer={(categoryName) => {
                 setMailFilterOverride(categoryName);

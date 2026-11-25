@@ -156,6 +156,8 @@ export const ScheduleManager: React.FC<ScheduleManagerProps> = ({
     try {
       await api.cancelPendingSchedule(scheduleId);
       onSchedulesChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to cancel pending slots.');
     } finally {
       setBusyId(null);
     }
@@ -166,6 +168,8 @@ export const ScheduleManager: React.FC<ScheduleManagerProps> = ({
     try {
       await api.retryScheduleSlot(scheduleId, slotId);
       onSchedulesChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to retry slot.');
     } finally {
       setBusyId(null);
     }
@@ -176,6 +180,8 @@ export const ScheduleManager: React.FC<ScheduleManagerProps> = ({
     try {
       await api.deleteSchedule(scheduleId);
       onSchedulesChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to delete schedule.');
     } finally {
       setBusyId(null);
     }
@@ -205,6 +211,8 @@ export const ScheduleManager: React.FC<ScheduleManagerProps> = ({
       );
       onSchedulesChanged();
       onReplySimulated?.();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to simulate reply.');
     } finally {
       setBusyId(null);
     }

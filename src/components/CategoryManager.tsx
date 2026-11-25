@@ -117,10 +117,14 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({
   };
 
   const handleDeleteCategory = async (cat: CategoryDoc) => {
-    await api.deleteCategory(cat.id);
-    if (editingId === cat.id) resetForm();
-    onCategoriesChanged();
-    onMailsChanged();
+    try {
+      await api.deleteCategory(cat.id);
+      if (editingId === cat.id) resetForm();
+      onCategoriesChanged();
+      onMailsChanged();
+    } catch (err) {
+      setStatusNotice(err instanceof Error ? err.message : 'Failed to delete category.');
+    }
   };
 
   const handleRecategorize = async () => {
@@ -134,6 +138,8 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({
           res.updatedCount === 1 ? 'classification' : 'classifications'
         }.`
       );
+    } catch (err) {
+      setStatusNotice(err instanceof Error ? err.message : 'Failed to re-run categorization.');
     } finally {
       setRecategorizing(false);
     }
@@ -141,9 +147,14 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({
 
   const handleConfirmBulkClean = async () => {
     if (!bulkDeleteCategory) return;
-    await api.bulkDeleteMails({ category: bulkDeleteCategory.name });
-    setBulkDeleteCategory(null);
-    onMailsChanged();
+    try {
+      await api.bulkDeleteMails({ category: bulkDeleteCategory.name });
+      setBulkDeleteCategory(null);
+      onMailsChanged();
+    } catch (err) {
+      setBulkDeleteCategory(null);
+      setStatusNotice(err instanceof Error ? err.message : 'Failed to clean category emails.');
+    }
   };
 
   return (

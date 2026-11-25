@@ -49,11 +49,13 @@ export const FloatingOtpPill: React.FC<FloatingOtpPillProps> = ({
     try {
       await navigator.clipboard?.writeText(activeEntry.otpCode).catch(() => {});
       setCopiedId(activeEntry.id);
-      await api.markOtpUsed(activeEntry.id);
+      await api.markOtpUsed(activeEntry.id).catch(() => {});
       setTimeout(() => {
         setCopiedId(null);
         onOtpConsumed();
       }, 900);
+    } catch {
+      // Handled safely without unhandled rejection
     } finally {
       setBusyId(null);
     }

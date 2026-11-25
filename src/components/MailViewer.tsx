@@ -145,30 +145,46 @@ export const MailViewer: React.FC<MailViewerProps> = ({
     setReplyBody('');
     setQuickReplyError(null);
     if (!mail.isRead) {
-      await api.updateMail(mail.id, { isRead: true });
-      onMailsChanged();
+      try {
+        await api.updateMail(mail.id, { isRead: true });
+        onMailsChanged();
+      } catch (err) {
+        setReplyNotice(err instanceof Error ? err.message : 'Unable to mark email as read.');
+      }
     }
   };
 
   const handleToggleStar = async (mail: MailDoc, e?: React.MouseEvent) => {
     e?.stopPropagation();
-    await api.updateMail(mail.id, { isStarred: !mail.isStarred });
-    onMailsChanged();
+    try {
+      await api.updateMail(mail.id, { isStarred: !mail.isStarred });
+      onMailsChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Unable to update star status.');
+    }
   };
 
   const handleToggleRead = async (mail: MailDoc) => {
-    await api.updateMail(mail.id, { isRead: !mail.isRead });
-    onMailsChanged();
+    try {
+      await api.updateMail(mail.id, { isRead: !mail.isRead });
+      onMailsChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Unable to update read status.');
+    }
   };
 
   const handleDeleteSingle = async (mail: MailDoc) => {
-    await api.deleteMail(mail.id);
-    setCheckedIds((prev) => {
-      const next = new Set(prev);
-      next.delete(mail.id);
-      return next;
-    });
-    onMailsChanged();
+    try {
+      await api.deleteMail(mail.id);
+      setCheckedIds((prev) => {
+        const next = new Set(prev);
+        next.delete(mail.id);
+        return next;
+      });
+      onMailsChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Unable to delete email.');
+    }
   };
 
   const activeStopOnReplyCandidate = useMemo(() => {
@@ -198,6 +214,8 @@ export const MailViewer: React.FC<MailViewerProps> = ({
         );
       }
       onMailsChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to simulate incoming mail.');
     } finally {
       setSyncing(false);
     }
@@ -328,6 +346,8 @@ export const MailViewer: React.FC<MailViewerProps> = ({
       }
       onMailsChanged();
       onSchedulesChanged?.();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to simulate reply.');
     } finally {
       setSimulatingReply(false);
     }
@@ -367,6 +387,8 @@ export const MailViewer: React.FC<MailViewerProps> = ({
       setReplyBody('');
       setQuickReplyError(null);
       onMailsChanged();
+    } catch (err) {
+      setQuickReplyError(err instanceof Error ? err.message : 'Failed to send reply.');
     } finally {
       setSendingReply(false);
     }
@@ -404,9 +426,13 @@ export const MailViewer: React.FC<MailViewerProps> = ({
   };
 
   const handleBulkToggleRead = async (isRead: boolean) => {
-    await Promise.all(Array.from(checkedIds).map((id) => api.updateMail(id, { isRead })));
-    setCheckedIds(new Set());
-    onMailsChanged();
+    try {
+      await Promise.all(Array.from(checkedIds).map((id) => api.updateMail(id, { isRead })));
+      setCheckedIds(new Set());
+      onMailsChanged();
+    } catch (err) {
+      setReplyNotice(err instanceof Error ? err.message : 'Unable to update selected emails.');
+    }
   };
 
   const confirmBulkDelete = async () => {
@@ -420,6 +446,9 @@ export const MailViewer: React.FC<MailViewerProps> = ({
       setCheckedIds(new Set());
       setBulkConfirm(null);
       onMailsChanged();
+    } catch (err) {
+      setBulkConfirm(null);
+      setReplyNotice(err instanceof Error ? err.message : 'Failed to delete selected emails.');
     } finally {
       setBulkDeleting(false);
     }

@@ -148,7 +148,7 @@ export const SidebarRail: React.FC<SidebarRailProps> = ({
       <div className="flex h-14 items-center justify-between border-b border-[var(--border-subtle)] px-3">
         {!collapsed && (
           <span className="font-display truncate text-base font-bold tracking-tight text-[var(--text-primary)]">
-            Meridian Mail
+            POSTLYai
           </span>
         )}
         <button

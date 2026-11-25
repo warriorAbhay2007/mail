@@ -604,6 +604,8 @@ export const NewTabAgent: React.FC<NewTabAgentProps> = ({
                       onChatUpdated(updated.chat);
                     }
                     onOtpConsumed();
+                  } catch (err) {
+                    setError(err instanceof Error ? err.message : 'Unable to update OTP status.');
                   } finally {
                     setBusyMessageId(null);
                   }
@@ -836,8 +838,12 @@ export const NewTabAgent: React.FC<NewTabAgentProps> = ({
                         <button
                           type="button"
                           onClick={async () => {
-                            await api.updateMail(item.mailId, { folder: 'archive', isRead: true });
-                            onMailsChanged();
+                            try {
+                              await api.updateMail(item.mailId, { folder: 'archive', isRead: true });
+                              onMailsChanged();
+                            } catch (err) {
+                              setError(err instanceof Error ? err.message : 'Failed to archive message.');
+                            }
                           }}
                           className="inline-flex items-center gap-1 text-[11px] font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                         >
@@ -847,8 +853,12 @@ export const NewTabAgent: React.FC<NewTabAgentProps> = ({
                         <button
                           type="button"
                           onClick={async () => {
-                            await api.deleteMail(item.mailId);
-                            onMailsChanged();
+                            try {
+                              await api.deleteMail(item.mailId);
+                              onMailsChanged();
+                            } catch (err) {
+                              setError(err instanceof Error ? err.message : 'Failed to delete message.');
+                            }
                           }}
                           className="inline-flex items-center gap-1 text-[11px] font-medium text-[#DC2626] hover:underline dark:text-[#F87171]"
                         >

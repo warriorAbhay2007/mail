@@ -64,10 +64,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleLogout = async () => {
     setLoading(true);
     try {
-      await api.logout();
+      await api.logout().catch(() => {});
       setAccessToken(null);
       onSignedOut();
       onClose();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to sign out.');
     } finally {
       setLoading(false);
     }
