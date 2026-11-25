@@ -1,0 +1,357 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    color-scheme: light;
+
+    --bg-canvas: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --border-subtle: #E2E8F0;
+    --accent-muted: #E2E8F0;
+    --accent-primary: #2563EB;
+    --accent-primary-hover: #1D4ED8;
+    --accent-soft: #EFF6FF;
+    --accent-text: #2563EB;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --text-on-primary: #FFFFFF;
+    --text-on-accent: #FFFFFF;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --bg-canvas: #0B1120;
+    --bg-surface: #0F172A;
+    --border-subtle: #1E293B;
+    --accent-muted: #1E293B;
+    --accent-primary: #2563EB;
+    --accent-primary-hover: #3B82F6;
+    --accent-soft: rgba(37, 99, 235, 0.16);
+    --accent-text: #60A5FA;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-on-primary: #FFFFFF;
+    --text-on-accent: #FFFFFF;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Safe isolation for sanitized HTML email body previews */
+.mail-html-sandbox {
+  isolation: isolate;
+  contain: layout style;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.mail-html-sandbox img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.mail-html-sandbox table {
+  max-width: 100% !important;
+  width: auto !important;
+  border-collapse: collapse;
+}
+
+.mail-html-sandbox a {
+  color: var(--accent-text);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mail-html-sandbox pre,
+.mail-html-sandbox code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Pure CSS animations for Inbox Zero empty state */
+@keyframes inbox-zero-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes inbox-zero-shadow {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.16;
+  }
+  50% {
+    transform: scaleX(0.84);
+    opacity: 0.09;
+  }
+}
+
+@keyframes inbox-zero-ring {
+  0% {
+    transform: scale(0.68);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+@keyframes inbox-zero-sparkle {
+  0%, 100% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.15) rotate(12deg);
+    opacity: 1;
+  }
+}
+
+@keyframes inbox-zero-check-draw {
+  0% {
+    stroke-dashoffset: 32;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes inbox-zero-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inbox-zero-float {
+  animation: inbox-zero-float 3.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.inbox-zero-shadow {
+  animation: inbox-zero-shadow 3.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.inbox-zero-ring {
+  animation: inbox-zero-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.inbox-zero-ring-delayed {
+  animation: inbox-zero-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: 1.4s;
+}
+
+.inbox-zero-sparkle {
+  animation: inbox-zero-sparkle 2.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.inbox-zero-check {
+  stroke-dasharray: 32;
+  stroke-dashoffset: 32;
+  animation: inbox-zero-check-draw 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
+.inbox-zero-fade-up {
+  animation: inbox-zero-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.inbox-zero-fade-up-delayed {
+  animation: inbox-zero-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.inbox-zero-fade-up-delayed-2 {
+  animation: inbox-zero-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inbox-zero-float,
+  .inbox-zero-shadow,
+  .inbox-zero-ring,
+  .inbox-zero-ring-delayed,
+  .inbox-zero-sparkle,
+  .inbox-zero-check,
+  .inbox-zero-fade-up,
+  .inbox-zero-fade-up-delayed,
+  .inbox-zero-fade-up-delayed-2 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* 3-Column Privacy Feature Cards Animations */
+@keyframes speed-line-dash {
+  0% {
+    transform: translateX(-28%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@keyframes sort-tag-float-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.94);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.feature-card-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.feature-card-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card 1: Lightning Fast hover speed lines + progress bar */
+.speed-line {
+  opacity: 0;
+  transform: translateX(-28%);
+}
+
+.group:hover .speed-line {
+  animation: speed-line-dash 1.1s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.speed-progress-fill {
+  width: 38%;
+  transition: width 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .speed-progress-fill {
+  width: 96%;
+}
+
+/* Card 2: End-to-End Encrypted SVG padlock path draw on hover */
+.e2e-lock-path {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  transition: stroke-dashoffset 780ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .e2e-lock-path {
+  stroke-dashoffset: 0;
+}
+
+.e2e-shackle-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  transition: stroke-dashoffset 580ms cubic-bezier(0.22, 1, 0.36, 1) 160ms;
+}
+
+.group:hover .e2e-shackle-path {
+  stroke-dashoffset: 0;
+}
+
+/* Card 3: Smart Sorting floating category tags */
+.sort-tag-item {
+  opacity: 0;
+  transform: translateY(12px) scale(0.94);
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 250ms ease;
+}
+
+.feature-card-reveal.is-visible .sort-tag-item {
+  animation: sort-tag-float-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.group:hover .sort-tag-item-1 {
+  transform: translateY(-4px) rotate(-1.5deg);
+}
+
+.group:hover .sort-tag-item-2 {
+  transform: translateY(-6px) rotate(1.5deg);
+}
+
+.group:hover .sort-tag-item-3 {
+  transform: translateY(-3px) rotate(1deg);
+}
+
+.group:hover .sort-tag-item-4 {
+  transform: translateY(-5px) rotate(-1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card-reveal,
+  .sort-tag-item {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .e2e-lock-path,
+  .e2e-shackle-path {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+  .group:hover .speed-line {
+    animation: none !important;
+  }
+}
+
+

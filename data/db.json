@@ -1,0 +1,1176 @@
+{
+  "users": [
+    {
+      "id": "user_demo_primary",
+      "email": "abhaytailor6@velomail.app",
+      "name": "Abhay Tailor",
+      "passwordHash": "dd47e37f93f8d08a00aa68f4acb46f6290c2fa65bca6330715e6921f52907be241c72fb3383b9d25ea8a141d71ece3591cfe55065859dbdcd8aa3c676e8e1dc2",
+      "passwordSalt": "2574f38234adf50007bfb5f453b50047",
+      "authProvider": "demo",
+      "createdAt": "2026-11-24T05:07:09.817Z"
+    }
+  ],
+  "mails": [
+    {
+      "id": "mail_5d932b635348",
+      "userId": "user_demo_primary",
+      "threadId": "th_327664406a2d",
+      "folder": "inbox",
+      "fromName": "Cloudflare Auth",
+      "fromEmail": "no-reply@cloudflare.com",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "[Cloudflare] Login verification code",
+      "snippet": "Your Cloudflare security verification code is 166610. Valid for 10 minutes.",
+      "textBody": "Your Cloudflare security verification code is 166610. Valid for 10 minutes.",
+      "receivedAt": "2026-11-24T14:59:14.112Z",
+      "isRead": false,
+      "isStarred": false,
+      "category": "OTP",
+      "categorizedBy": "otp-rule",
+      "otpCode": "166610",
+      "suggestedActions": [
+        {
+          "id": "mail_5d932b635348_act_otp",
+          "type": "copy_otp",
+          "label": "Copy OTP",
+          "confidence": 0.99,
+          "otpCode": "166610",
+          "otpVaultId": "otp_5da3014d78b5",
+          "serviceName": "Cloudflare"
+        }
+      ]
+    },
+    {
+      "id": "mail_207477a9313e",
+      "userId": "user_demo_primary",
+      "threadId": "th_71878831037e",
+      "folder": "inbox",
+      "fromName": "Marcus Lin",
+      "fromEmail": "marcus@acme.dev",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Security Review & SOC2 Sign-Off Due 2026-11-27",
+      "snippet": "Hi Abhay, Friendly reminder that the quarterly production access audit and SOC2 sign-off are due by 2026-11-27 at 17:00 UTC. Could you pleas",
+      "textBody": "Hi Abhay,\n\nFriendly reminder that the quarterly production access audit and SOC2 sign-off are due by 2026-11-27 at 17:00 UTC.\n\nCould you please confirm once your team's checklist is uploaded?\n\nThanks,\nMarcus",
+      "receivedAt": "2026-11-24T14:59:13.509Z",
+      "isRead": false,
+      "isStarred": false,
+      "category": "Product",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_207477a9313e_act_reply",
+          "type": "reply_draft",
+          "label": "Draft Reply",
+          "confidence": 0.93,
+          "suggestedSubject": "Re: Security Review & SOC2 Sign-Off Due 2026-11-27",
+          "suggestedBody": "Hi Marcus,\n\nGot it—I've logged this deadline and will make sure our review for \"Security Review & SOC2 Sign-Off Due 2026-11-27\" is submitted ahead of schedule.\n\nBest,\nAbhay Tailor"
+        },
+        {
+          "id": "mail_207477a9313e_act_schedule",
+          "type": "schedule_followup",
+          "label": "Schedule Follow-Up",
+          "confidence": 0.9,
+          "targetDatetime": "2026-11-27T09:00:00.000Z",
+          "extractedDateLabel": "2026-11-27",
+          "suggestedSubject": "Follow-Up: Security Review & SOC2 Sign-Off Due 2026-11-27"
+        }
+      ]
+    },
+    {
+      "id": "mail_05fc20405783",
+      "userId": "user_demo_primary",
+      "threadId": "th_b0780366f90f",
+      "folder": "inbox",
+      "fromName": "Elena Vance",
+      "fromEmail": "elena@partner.io",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Partner Sync: Q4 API Integration Walkthrough",
+      "snippet": "Hi Abhay, Could we meet this Thursday at 15:00 UTC to review the Q4 API integration checklist and confirm the webhook payload format? Let me",
+      "textBody": "Hi Abhay,\n\nCould we meet this Thursday at 15:00 UTC to review the Q4 API integration checklist and confirm the webhook payload format?\n\nLet me know if that slot works or suggest an alternative.\n\nBest,\nElena",
+      "receivedAt": "2026-11-24T14:58:59.204Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "Product",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_05fc20405783_act_reply",
+          "type": "reply_draft",
+          "label": "Draft Reply",
+          "confidence": 0.93,
+          "suggestedSubject": "Re: Partner Sync: Q4 API Integration Walkthrough",
+          "suggestedBody": "Hi Elena,\n\nThanks for reaching out, Elena. The proposed timing works on my end—happy to lock this in and walk through \"Partner Sync: Q4 API Integration Walkthrough\".\n\nBest,\nAbhay Tailor"
+        },
+        {
+          "id": "mail_05fc20405783_act_schedule",
+          "type": "schedule_followup",
+          "label": "Schedule Follow-Up",
+          "confidence": 0.9,
+          "targetDatetime": "2026-11-26T15:00:00.000Z",
+          "extractedDateLabel": "this Thursday at 15:00 UTC",
+          "suggestedSubject": "Follow-Up: Partner Sync: Q4 API Integration Walkthrough"
+        }
+      ]
+    },
+    {
+      "id": "mail_ecc111e21601",
+      "userId": "user_demo_primary",
+      "threadId": "th_cbf4dc97dce5",
+      "inReplyTo": "th_cbf4dc97dce5",
+      "folder": "inbox",
+      "fromName": "Sarah",
+      "fromEmail": "sarah@northstar.io",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Re: Quick Follow-Up",
+      "snippet": "Thanks for following up! Replying here so we can finalize details — no further reminders needed.",
+      "textBody": "Thanks for following up! Replying here so we can finalize details — no further reminders needed.",
+      "receivedAt": "2026-11-24T14:52:05.883Z",
+      "isRead": false,
+      "isStarred": false,
+      "category": "Product",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": []
+    },
+    {
+      "id": "mail_b87af04cb8eb",
+      "userId": "user_demo_primary",
+      "threadId": "th_cbf4dc97dce5",
+      "inReplyTo": "th_cbf4dc97dce5",
+      "folder": "inbox",
+      "fromName": "Recruiter",
+      "fromEmail": "recruiter@northstar.io",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Re: Quick Follow-Up",
+      "snippet": "Hi, thanks for following up on \"Quick Follow-Up\". Confirming receipt — let's connect tomorrow.",
+      "textBody": "Hi, thanks for following up on \"Quick Follow-Up\". Confirming receipt — let's connect tomorrow.",
+      "receivedAt": "2026-11-24T14:52:00.552Z",
+      "isRead": false,
+      "isStarred": false,
+      "category": "Finance",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_b87af04cb8eb_act_schedule",
+          "type": "schedule_followup",
+          "label": "Schedule Follow-Up",
+          "confidence": 0.9,
+          "targetDatetime": "2026-11-25T09:00:00.000Z",
+          "extractedDateLabel": "tomorrow",
+          "suggestedSubject": "Re: Quick Follow-Up"
+        }
+      ]
+    },
+    {
+      "id": "mail_35c291b10d72",
+      "userId": "user_demo_primary",
+      "threadId": "th_8f449e17ae3f",
+      "folder": "inbox",
+      "fromName": "Cloudflare Auth",
+      "fromEmail": "no-reply@cloudflare.com",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "[Cloudflare] Login verification code",
+      "snippet": "Your Cloudflare security verification code is 886096. Valid for 10 minutes.",
+      "textBody": "Your Cloudflare security verification code is 886096. Valid for 10 minutes.",
+      "receivedAt": "2026-11-24T13:55:22.285Z",
+      "isRead": false,
+      "isStarred": false,
+      "category": "OTP",
+      "categorizedBy": "otp-rule",
+      "otpCode": "886096",
+      "suggestedActions": [
+        {
+          "id": "mail_35c291b10d72_act_otp",
+          "type": "copy_otp",
+          "label": "Copy OTP",
+          "confidence": 0.99,
+          "otpCode": "886096",
+          "otpVaultId": "otp_9f1e5855cd33",
+          "serviceName": "Cloudflare"
+        }
+      ]
+    },
+    {
+      "id": "mail_6b2b4068036e",
+      "userId": "user_demo_primary",
+      "threadId": "th_github_otp",
+      "folder": "archive",
+      "fromName": "GitHub Security",
+      "fromEmail": "noreply@github.com",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "[GitHub] Please verify your device",
+      "snippet": "Verification code: 482913 — Enter this code to authorize your new browser session.",
+      "textBody": "Hey there,\n\nA sign-in attempt requires further verification.\n\nVerification code: 482913\n\nThis code expires in 10 minutes. If you did not initiate this request, rotate your credentials immediately.",
+      "htmlBody": "<div style=\"font-family: sans-serif; color: #0f172a;\"><p>Hey there,</p><p>A sign-in attempt requires further verification.</p><div style=\"padding: 12px 16px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; font-family: monospace; font-size: 20px; font-weight: 700; letter-spacing: 3px; display: inline-block;\">482913</div><p style=\"margin-top: 12px; color: #475569;\">This code expires in 10 minutes.</p></div>",
+      "receivedAt": "2026-11-24T04:43:09.818Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "OTP",
+      "otpCode": "482913",
+      "categorizedBy": "otp-rule",
+      "suggestedActions": []
+    },
+    {
+      "id": "mail_a219a918cd9f",
+      "userId": "user_demo_primary",
+      "threadId": "th_stripe_otp",
+      "folder": "inbox",
+      "fromName": "Stripe Auth",
+      "fromEmail": "verify@stripe.com",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Your Stripe 2FA one-time passcode",
+      "snippet": "Use one-time passcode 774120 to access your Stripe Dashboard.",
+      "textBody": "Your Stripe one-time passcode is 774120.\n\nEnter this 6-digit security code within 5 minutes to confirm your dashboard sign-in.",
+      "htmlBody": "<div><p>Your Stripe one-time passcode is <strong>774120</strong>.</p><p>Enter this 6-digit security code within 5 minutes to confirm your dashboard sign-in.</p></div>",
+      "receivedAt": "2026-11-24T03:55:09.818Z",
+      "isRead": false,
+      "isStarred": false,
+      "category": "OTP",
+      "otpCode": "774120",
+      "categorizedBy": "otp-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_a219a918cd9f_act_otp",
+          "type": "copy_otp",
+          "label": "Copy OTP",
+          "confidence": 0.99,
+          "otpCode": "774120",
+          "serviceName": "Stripe"
+        }
+      ]
+    },
+    {
+      "id": "mail_aa7e265a26ae",
+      "userId": "user_demo_primary",
+      "threadId": "th_aws_otp",
+      "folder": "inbox",
+      "fromName": "AWS IAM Identity",
+      "fromEmail": "no-reply@signin.aws",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "AWS verification code: 901482",
+      "snippet": "Your AWS login verification code is 901482.",
+      "textBody": "Hello,\n\nYour AWS login verification code is 901482.\nDo not share this MFA code with anyone.",
+      "receivedAt": "2026-11-24T01:37:09.818Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "OTP",
+      "otpCode": "901482",
+      "categorizedBy": "otp-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_aa7e265a26ae_act_otp",
+          "type": "copy_otp",
+          "label": "Copy OTP",
+          "confidence": 0.99,
+          "otpCode": "901482",
+          "serviceName": "AWS IAM"
+        }
+      ]
+    },
+    {
+      "id": "mail_cfd2e752dd44",
+      "userId": "user_demo_primary",
+      "threadId": "th_sarah_q4",
+      "folder": "inbox",
+      "fromName": "Sarah Chen",
+      "fromEmail": "sarah@northstar.io",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Q4 Launch Timeline & Customer Beta Cohort",
+      "snippet": "Can we lock the beta rollout schedule for Thursday morning UTC and confirm the 12 partner contacts?",
+      "textBody": "Hi Abhay Tailor,\n\nCan we lock the Q4 beta rollout schedule for Thursday morning UTC and confirm the 12 partner contacts?\n\nWe also need to review the onboarding email sequence before sending out the final milestone invite.\n\nBest,\nSarah",
+      "htmlBody": "<div><p>Hi Abhay Tailor,</p><p>Can we lock the <strong>Q4 beta rollout schedule</strong> for Thursday morning UTC and confirm the 12 partner contacts?</p><p>We also need to review the onboarding email sequence before sending out the final milestone invite.</p><p>Best,<br/>Sarah Chen · Product Lead</p></div>",
+      "receivedAt": "2026-11-24T03:01:09.818Z",
+      "isRead": true,
+      "isStarred": true,
+      "category": "Product",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_cfd2e752dd44_act_reply",
+          "type": "reply_draft",
+          "label": "Draft Reply",
+          "confidence": 0.93,
+          "suggestedSubject": "Re: Q4 Launch Timeline & Customer Beta Cohort",
+          "suggestedBody": "Hi Sarah,\n\nThanks for reaching out, Sarah. The proposed timing works on my end—happy to lock this in and walk through \"Q4 Launch Timeline & Customer Beta Cohort\".\n\nBest,\nAbhay Tailor"
+        },
+        {
+          "id": "mail_cfd2e752dd44_act_schedule",
+          "type": "schedule_followup",
+          "label": "Schedule Follow-Up",
+          "confidence": 0.9,
+          "targetDatetime": "2026-11-26T09:00:00.000Z",
+          "extractedDateLabel": "Thursday morning UTC",
+          "suggestedSubject": "Follow-Up: Q4 Launch Timeline & Customer Beta Cohort"
+        }
+      ]
+    },
+    {
+      "id": "mail_5525e15a38ec",
+      "userId": "user_demo_primary",
+      "threadId": "th_stripe_inv",
+      "folder": "inbox",
+      "fromName": "Stripe Billing",
+      "fromEmail": "receipts@stripe.com",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Invoice #INV-2026-1142 — Cloud Infrastructure",
+      "snippet": "Your November billing statement for $480.00 has been paid.",
+      "textBody": "Receipt from Meridian Cloud Infrastructure.\n\nInvoice: #INV-2026-1142\nAmount Paid: $480.00 USD\nBilling Period: Nov 1 - Nov 30, 2026\nStatus: Paid",
+      "htmlBody": "<div><h3>Invoice #INV-2026-1142</h3><table style=\"border: 1px solid #e2e8f0; width: 100%;\"><tr><td style=\"padding: 8px; border-bottom: 1px solid #e2e8f0;\">Compute Cluster</td><td style=\"padding: 8px; border-bottom: 1px solid #e2e8f0; text-align: right;\">$340.00</td></tr><tr><td style=\"padding: 8px; border-bottom: 1px solid #e2e8f0;\">MongoDB Atlas Dedicated</td><td style=\"padding: 8px; border-bottom: 1px solid #e2e8f0; text-align: right;\">$140.00</td></tr><tr><td style=\"padding: 8px; font-weight: 700;\">Total Paid</td><td style=\"padding: 8px; font-weight: 700; text-align: right;\">$480.00</td></tr></table></div>",
+      "receivedAt": "2026-11-24T00:07:09.818Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "Finance",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": []
+    },
+    {
+      "id": "mail_0e5816879e0b",
+      "userId": "user_demo_primary",
+      "threadId": "th_alex_eng",
+      "folder": "inbox",
+      "fromName": "Alex Rivera",
+      "fromEmail": "alex@acme.dev",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Release v2.14 pipeline green — ready for canary deploy",
+      "snippet": "All integration checks passed on the scheduler worker. Ready whenever you give the green light.",
+      "textBody": "Team,\n\nAll integration checks passed on the scheduler worker build #894. Atomic slot claiming handled 500 concurrent ticks with zero duplicates.\n\nReady whenever you give the green light for canary deploy.\n\n— Alex",
+      "receivedAt": "2026-11-23T22:19:09.818Z",
+      "isRead": false,
+      "isStarred": true,
+      "category": "Engineering",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": [
+        {
+          "id": "mail_0e5816879e0b_act_reply",
+          "type": "reply_draft",
+          "label": "Draft Reply",
+          "confidence": 0.93,
+          "suggestedSubject": "Re: Release v2.14 pipeline green — ready for canary deploy",
+          "suggestedBody": "Hi Alex,\n\nThanks for reaching out, Alex. The proposed timing works on my end—happy to lock this in and walk through \"Release v2.14 pipeline green — ready for canary deploy\".\n\nBest,\nAbhay Tailor"
+        }
+      ]
+    },
+    {
+      "id": "mail_3ce582b08103",
+      "userId": "user_demo_primary",
+      "threadId": "th_mercury",
+      "folder": "inbox",
+      "fromName": "Mercury Treasury",
+      "fromEmail": "notifications@mercury.com",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "Monthly payout & treasury statement available",
+      "snippet": "Your November treasury statement and payout summary are ready to review.",
+      "textBody": "Your November treasury statement and payout summary are ready for download in your Mercury account.",
+      "receivedAt": "2026-11-23T10:37:09.818Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "Finance",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": []
+    },
+    {
+      "id": "mail_89196a09127b",
+      "userId": "user_demo_primary",
+      "threadId": "th_linear_pr",
+      "folder": "inbox",
+      "fromName": "Linear Updates",
+      "fromEmail": "updates@linear.app",
+      "to": [
+        "abhaytailor6@velomail.app"
+      ],
+      "subject": "ENG-412: Implement HTML email sanitization boundary",
+      "snippet": "Alex Rivera moved ENG-412 to Ready for Review after PR #318 passed.",
+      "textBody": "ENG-412 moved to Ready for Review. Pull request #318 adds isolated email rendering and DOMPurify allowlists.",
+      "receivedAt": "2026-11-23T03:07:09.818Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "Engineering",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": []
+    },
+    {
+      "id": "mail_3f557daf30b6",
+      "userId": "user_demo_primary",
+      "threadId": "th_sent_1",
+      "folder": "sent",
+      "fromName": "Abhay Tailor",
+      "fromEmail": "abhaytailor6@velomail.app",
+      "to": [
+        "alex@acme.dev"
+      ],
+      "subject": "Re: Release v2.14 canary checklist",
+      "snippet": "Looks solid — proceed with the 10% rollout after 14:00 UTC.",
+      "textBody": "Looks solid — proceed with the 10% rollout after 14:00 UTC and share latency metrics.",
+      "receivedAt": "2026-11-24T00:55:09.818Z",
+      "isRead": true,
+      "isStarred": false,
+      "category": "Engineering",
+      "categorizedBy": "custom-rule",
+      "suggestedActions": []
+    }
+  ],
+  "otp_vault": [
+    {
+      "id": "otp_c443a4f4bf26",
+      "userId": "user_demo_primary",
+      "mailId": "mail_5d932b635348",
+      "serviceName": "GitHub",
+      "otpCode": "166610",
+      "expiresAt": "2026-11-25T04:50:19.834Z",
+      "isUsed": false,
+      "createdAt": "2026-11-24T14:59:14.112Z"
+    }
+  ],
+  "schedules": [
+    {
+      "id": "sched_cab77509d43e",
+      "userId": "user_demo_primary",
+      "mode": "advanced",
+      "startUtc": "2026-11-24T15:51:50.734Z",
+      "freq": 3,
+      "gapValue": 3,
+      "gapUnit": "days",
+      "recipients": [
+        "recruiter@northstar.io",
+        "sarah@northstar.io"
+      ],
+      "subject": "Quick Follow-Up",
+      "body": "Hi there,\n\nFollowing up regarding follow-up to @recruiter@northstar.io, @sarah@northstar.io every 3 days, 3 times, stop on reply.\n\nBest regards,\nAbhay Tailor",
+      "stopOnReply": true,
+      "threadId": "th_cbf4dc97dce5",
+      "status": "cancelled",
+      "slots": [
+        {
+          "id": "sched_cab77509d43e_slot_1_1",
+          "runIndex": 1,
+          "runAtUtc": "2026-11-24T15:51:50.734Z",
+          "recipient": "recruiter@northstar.io",
+          "status": "cancelled_replied",
+          "cancelledAt": "2026-11-24T14:52:00.552Z",
+          "replyMailId": "mail_b87af04cb8eb"
+        },
+        {
+          "id": "sched_cab77509d43e_slot_1_2",
+          "runIndex": 1,
+          "runAtUtc": "2026-11-24T15:51:50.734Z",
+          "recipient": "sarah@northstar.io",
+          "status": "cancelled_replied",
+          "cancelledAt": "2026-11-24T14:52:05.883Z",
+          "replyMailId": "mail_ecc111e21601"
+        },
+        {
+          "id": "sched_cab77509d43e_slot_2_1",
+          "runIndex": 2,
+          "runAtUtc": "2026-11-27T15:51:50.734Z",
+          "recipient": "recruiter@northstar.io",
+          "status": "cancelled_replied",
+          "cancelledAt": "2026-11-24T14:52:00.552Z",
+          "replyMailId": "mail_b87af04cb8eb"
+        },
+        {
+          "id": "sched_cab77509d43e_slot_2_2",
+          "runIndex": 2,
+          "runAtUtc": "2026-11-27T15:51:50.734Z",
+          "recipient": "sarah@northstar.io",
+          "status": "cancelled_replied",
+          "cancelledAt": "2026-11-24T14:52:05.883Z",
+          "replyMailId": "mail_ecc111e21601"
+        },
+        {
+          "id": "sched_cab77509d43e_slot_3_1",
+          "runIndex": 3,
+          "runAtUtc": "2026-11-30T15:51:50.734Z",
+          "recipient": "recruiter@northstar.io",
+          "status": "cancelled_replied",
+          "cancelledAt": "2026-11-24T14:52:00.552Z",
+          "replyMailId": "mail_b87af04cb8eb"
+        },
+        {
+          "id": "sched_cab77509d43e_slot_3_2",
+          "runIndex": 3,
+          "runAtUtc": "2026-11-30T15:51:50.734Z",
+          "recipient": "sarah@northstar.io",
+          "status": "cancelled_replied",
+          "cancelledAt": "2026-11-24T14:52:05.883Z",
+          "replyMailId": "mail_ecc111e21601"
+        }
+      ],
+      "createdAt": "2026-11-24T14:51:55.021Z",
+      "updatedAt": "2026-11-24T14:52:05.883Z",
+      "cancelledReason": "Stopped automatically: sarah@northstar.io replied"
+    },
+    {
+      "id": "sched_1a4237caffd5",
+      "userId": "user_demo_primary",
+      "mode": "advanced",
+      "startUtc": "2026-11-24T03:07:09.818Z",
+      "freq": 3,
+      "gapValue": 4,
+      "gapUnit": "hours",
+      "recipients": [
+        "sarah@northstar.io",
+        "alex@acme.dev"
+      ],
+      "subject": "Q4 Beta Rollout Checkpoint",
+      "body": "Quick automated checkpoint: please share any blocking issues ahead of the Thursday cohort release.",
+      "slots": [
+        {
+          "id": "sched_1a4237caffd5_slot_1_1",
+          "runIndex": 1,
+          "runAtUtc": "2026-11-24T03:07:09.818Z",
+          "recipient": "sarah@northstar.io",
+          "status": "sent",
+          "sentAtUtc": "2026-11-24T03:08:21.818Z"
+        },
+        {
+          "id": "sched_1a4237caffd5_slot_1_2",
+          "runIndex": 1,
+          "runAtUtc": "2026-11-24T03:07:09.818Z",
+          "recipient": "alex@acme.dev",
+          "status": "sent",
+          "sentAtUtc": "2026-11-24T03:08:21.818Z"
+        },
+        {
+          "id": "sched_1a4237caffd5_slot_2_1",
+          "runIndex": 2,
+          "runAtUtc": "2026-11-24T07:07:09.818Z",
+          "recipient": "sarah@northstar.io",
+          "status": "failed",
+          "error": "SMTP 535 Authentication failed — verify SMTP credentials in settings"
+        },
+        {
+          "id": "sched_1a4237caffd5_slot_2_2",
+          "runIndex": 2,
+          "runAtUtc": "2026-11-24T07:07:09.818Z",
+          "recipient": "alex@acme.dev",
+          "status": "failed",
+          "error": "SMTP 535 Authentication failed — verify SMTP credentials in settings"
+        },
+        {
+          "id": "sched_1a4237caffd5_slot_3_1",
+          "runIndex": 3,
+          "runAtUtc": "2026-11-24T11:07:09.818Z",
+          "recipient": "sarah@northstar.io",
+          "status": "failed",
+          "error": "SMTP 535 Authentication failed — verify SMTP credentials in settings"
+        },
+        {
+          "id": "sched_1a4237caffd5_slot_3_2",
+          "runIndex": 3,
+          "runAtUtc": "2026-11-24T11:07:09.818Z",
+          "recipient": "alex@acme.dev",
+          "status": "failed",
+          "error": "SMTP 535 Authentication failed — verify SMTP credentials in settings"
+        }
+      ],
+      "createdAt": "2026-11-24T02:07:09.818Z",
+      "updatedAt": "2026-11-24T13:51:09.367Z",
+      "stopOnReply": true,
+      "status": "completed"
+    },
+    {
+      "id": "sched_e0ffee69e6ef",
+      "userId": "user_demo_primary",
+      "mode": "basic",
+      "startUtc": "2026-11-24T00:07:09.818Z",
+      "freq": 1,
+      "gapValue": 0,
+      "gapUnit": "minutes",
+      "recipients": [
+        "ops@acme.dev"
+      ],
+      "subject": "Weekly Uptime & Cost Digest",
+      "body": "Attached summary of weekly API latency and MongoDB cluster utilization.",
+      "slots": [
+        {
+          "id": "sched_e0ffee69e6ef_slot_1_1",
+          "runIndex": 1,
+          "runAtUtc": "2026-11-24T00:07:09.818Z",
+          "recipient": "ops@acme.dev",
+          "status": "failed",
+          "error": "SMTP 421 Temporary connection timeout — ready for manual retry"
+        }
+      ],
+      "createdAt": "2026-11-23T23:07:09.818Z",
+      "updatedAt": "2026-11-24T00:07:09.818Z",
+      "stopOnReply": false,
+      "status": "completed"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_011171c22deb",
+      "userId": "user_demo_primary",
+      "name": "OTP",
+      "description": "Fast deterministic detection for 4-8 digit verification codes, 2FA tokens, and login passcodes.",
+      "keywords": [
+        "otp",
+        "verification code",
+        "passcode",
+        "2fa",
+        "security code"
+      ],
+      "senderPatterns": [
+        "noreply",
+        "verify",
+        "security",
+        "auth"
+      ],
+      "isSystem": true,
+      "aiEnabled": false,
+      "createdAt": "2026-11-21T05:07:09.818Z"
+    },
+    {
+      "id": "cat_b3ca5deaf51e",
+      "userId": "user_demo_primary",
+      "name": "Finance",
+      "description": "Invoices, billing statements, payouts, and tax receipts.",
+      "keywords": [
+        "invoice",
+        "billing",
+        "receipt",
+        "payout",
+        "statement",
+        "payment"
+      ],
+      "senderPatterns": [
+        "billing@",
+        "receipts@",
+        "stripe.com",
+        "mercury.com"
+      ],
+      "isSystem": false,
+      "aiEnabled": true,
+      "createdAt": "2026-11-21T05:07:09.818Z"
+    },
+    {
+      "id": "cat_2f5a33509aed",
+      "userId": "user_demo_primary",
+      "name": "Engineering",
+      "description": "Deployments, pull requests, CI/CD alerts, and incident notices.",
+      "keywords": [
+        "deploy",
+        "pull request",
+        "pipeline",
+        "incident",
+        "release",
+        "build"
+      ],
+      "senderPatterns": [
+        "github.com",
+        "vercel.com",
+        "linear.app"
+      ],
+      "isSystem": false,
+      "aiEnabled": true,
+      "createdAt": "2026-11-21T05:07:09.818Z"
+    },
+    {
+      "id": "cat_13c0fac67fd4",
+      "userId": "user_demo_primary",
+      "name": "Product",
+      "description": "Roadmap reviews, design critiques, sprint updates, and customer feedback.",
+      "keywords": [
+        "roadmap",
+        "sprint",
+        "launch",
+        "figma",
+        "milestone",
+        "q4"
+      ],
+      "senderPatterns": [
+        "northstar.io",
+        "acme.dev"
+      ],
+      "isSystem": false,
+      "aiEnabled": true,
+      "createdAt": "2026-11-21T05:07:09.818Z"
+    }
+  ],
+  "chat_sessions": [
+    {
+      "id": "chat_990999e83a9e",
+      "userId": "user_demo_primary",
+      "title": "/draft @mail:mail_207477a9313e Reply to @mar...",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_4b7f67a830a0",
+          "role": "user",
+          "content": "/draft @mail:mail_207477a9313e Reply to @marcus@acme.dev regarding \"Security Review & SOC2 Sign-Off Due 2026-11-27\"",
+          "createdAt": "2026-11-24T15:33:47.748Z"
+        },
+        {
+          "id": "msg_a3d04088c95f",
+          "role": "assistant",
+          "content": "Pre-populated reply draft to Marcus Lin (marcus@acme.dev) from Inbox-to-Action extraction. Edit or send below.",
+          "createdAt": "2026-11-24T15:33:47.749Z",
+          "actionPreview": {
+            "type": "draft_preview",
+            "to": [
+              "marcus@acme.dev"
+            ],
+            "subject": "Re: Security Review & SOC2 Sign-Off Due 2026-11-27",
+            "body": "Hi Marcus,\n\nGot it—I've logged this deadline and will make sure our review for \"Security Review & SOC2 Sign-Off Due 2026-11-27\" is submitted ahead of schedule.\n\nBest,\nAbhay Tailor",
+            "status": "pending"
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T15:33:47.748Z",
+      "updatedAt": "2026-11-24T15:33:47.749Z"
+    },
+    {
+      "id": "chat_bfa27da4d3e7",
+      "userId": "user_demo_primary",
+      "title": "/schedule Follow up with @elena@partner.io o...",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_8b24cf964e16",
+          "role": "user",
+          "content": "/schedule Follow up with @elena@partner.io on 2026-11-26T15:00:00.000Z regarding @mail:mail_05fc20405783 (\"Partner Sync: Q4 API Integration Walkthrough\")",
+          "createdAt": "2026-11-24T14:59:08.495Z"
+        },
+        {
+          "id": "msg_224103177591",
+          "role": "assistant",
+          "content": "Parsed your request into a Basic one-time schedule for elena@partner.io. Review the materialized UTC timestamps below and confirm to activate.",
+          "createdAt": "2026-11-24T14:59:08.496Z",
+          "actionPreview": {
+            "type": "schedule_preview",
+            "rule": {
+              "mode": "basic",
+              "startUtc": "2026-11-26T15:00:00.000Z",
+              "freq": 1,
+              "gapValue": 0,
+              "gapUnit": "hours",
+              "recipients": [
+                "elena@partner.io"
+              ],
+              "subject": "Follow-Up: Partner Sync: Q4 API Integration Walkthrough",
+              "body": "Hi Elena,\n\nFollowing up regarding \"Partner Sync: Q4 API Integration Walkthrough\" (this Thursday at 15:00 UTC).\n\nBest regards,\nAbhay Tailor",
+              "stopOnReply": false,
+              "threadId": "th_b0780366f90f"
+            },
+            "timestampsUtc": [
+              "2026-11-26T15:00:00.000Z"
+            ],
+            "confirmed": false
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T14:59:08.495Z",
+      "updatedAt": "2026-11-24T14:59:08.496Z"
+    },
+    {
+      "id": "chat_5d6b449a1c5a",
+      "userId": "user_demo_primary",
+      "title": "/draft @mail:mail_05fc20405783 Reply to @ele...",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_bdd53ee9fb86",
+          "role": "user",
+          "content": "/draft @mail:mail_05fc20405783 Reply to @elena@partner.io regarding \"Partner Sync: Q4 API Integration Walkthrough\"",
+          "createdAt": "2026-11-24T14:59:02.815Z"
+        },
+        {
+          "id": "msg_0c979152af1e",
+          "role": "assistant",
+          "content": "Pre-populated reply draft to Elena Vance (elena@partner.io) from Inbox-to-Action extraction. Edit or send below.",
+          "createdAt": "2026-11-24T14:59:02.817Z",
+          "actionPreview": {
+            "type": "draft_preview",
+            "to": [
+              "elena@partner.io"
+            ],
+            "subject": "Re: Partner Sync: Q4 API Integration Walkthrough",
+            "body": "Hi Elena,\n\nThanks for reaching out, Elena. The proposed timing works on my end—happy to lock this in and walk through \"Partner Sync: Q4 API Integration Walkthrough\".\n\nBest,\nAbhay Tailor",
+            "status": "pending"
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T14:59:02.815Z",
+      "updatedAt": "2026-11-24T14:59:02.817Z"
+    },
+    {
+      "id": "chat_42d4cec4fe98",
+      "userId": "user_demo_primary",
+      "title": "/schedule follow-up to @recruiter@northstar....",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_903199a44924",
+          "role": "user",
+          "content": "/schedule follow-up to @recruiter@northstar.io, @sarah@northstar.io every 3 days, 3 times, stop on reply",
+          "createdAt": "2026-11-24T14:51:50.733Z"
+        },
+        {
+          "id": "msg_adc81e78fd72",
+          "role": "assistant",
+          "content": "Parsed your request into an Advanced schedule (3 runs, every 3 days, Stop-on-Reply enabled) for recruiter@northstar.io, sarah@northstar.io. Review the materialized UTC timestamps below and confirm to activate.",
+          "createdAt": "2026-11-24T14:51:51.460Z",
+          "actionPreview": {
+            "type": "schedule_preview",
+            "rule": {
+              "mode": "advanced",
+              "startUtc": "2026-11-24T15:51:50.734Z",
+              "freq": 3,
+              "gapValue": 3,
+              "gapUnit": "days",
+              "recipients": [
+                "recruiter@northstar.io",
+                "sarah@northstar.io"
+              ],
+              "subject": "Quick Follow-Up",
+              "body": "Hi there,\n\nFollowing up regarding follow-up to @recruiter@northstar.io, @sarah@northstar.io every 3 days, 3 times, stop on reply.\n\nBest regards,\nAbhay Tailor",
+              "stopOnReply": true
+            },
+            "timestampsUtc": [
+              "2026-11-24T15:51:50.734Z",
+              "2026-11-27T15:51:50.734Z",
+              "2026-11-30T15:51:50.734Z"
+            ],
+            "confirmed": true,
+            "createdScheduleId": "sched_cab77509d43e"
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T14:51:50.733Z",
+      "updatedAt": "2026-11-24T14:51:55.029Z"
+    },
+    {
+      "id": "chat_4a7e5462d5a4",
+      "userId": "user_demo_primary",
+      "title": "/digest",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_04e5d843cef9",
+          "role": "user",
+          "content": "/digest",
+          "createdAt": "2026-11-24T14:03:40.502Z"
+        },
+        {
+          "id": "msg_ea0198baaee3",
+          "role": "assistant",
+          "content": "Analyzed 4 unread inbox emails: 1 need reply, 1 with deadlines or dates, and 2 low-priority / automated updates.",
+          "createdAt": "2026-11-24T14:03:41.120Z",
+          "actionPreview": {
+            "type": "digest_briefing",
+            "digest": {
+              "scope": "unread",
+              "generatedAt": "2026-11-24T14:03:40.503Z",
+              "totalAnalyzed": 4,
+              "summary": "Analyzed 4 unread inbox emails: 1 need reply, 1 with deadlines or dates, and 2 low-priority / automated updates.",
+              "needsReply": [
+                {
+                  "mailId": "mail_0e5816879e0b",
+                  "fromName": "Alex Rivera",
+                  "fromEmail": "alex@acme.dev",
+                  "subject": "Release v2.14 pipeline green — ready for canary deploy",
+                  "snippet": "All integration checks passed on the scheduler worker. Ready whenever you give the green light.",
+                  "category": "Engineering",
+                  "receivedAt": "2026-11-23T22:19:09.818Z",
+                  "isRead": false,
+                  "bucket": "needs_reply",
+                  "reason": "Direct message from Alex Rivera awaiting your confirmation or response."
+                }
+              ],
+              "deadlines": [
+                {
+                  "mailId": "mail_cfd2e752dd44",
+                  "fromName": "Sarah Chen",
+                  "fromEmail": "sarah@northstar.io",
+                  "subject": "Q4 Launch Timeline & Customer Beta Cohort",
+                  "snippet": "Can we lock the beta rollout schedule for Thursday morning UTC and confirm the 12 partner contacts?",
+                  "category": "Product",
+                  "receivedAt": "2026-11-24T03:01:09.818Z",
+                  "isRead": false,
+                  "bucket": "deadlines",
+                  "reason": "Mentions \"Thursday morning UTC\" — schedule a follow-up or milestone reminder.",
+                  "extractedDateLabel": "Thursday morning UTC",
+                  "suggestedStartUtc": "2026-11-26T09:00:00.000Z"
+                }
+              ],
+              "noise": [
+                {
+                  "mailId": "mail_35c291b10d72",
+                  "fromName": "Cloudflare Auth",
+                  "fromEmail": "no-reply@cloudflare.com",
+                  "subject": "[Cloudflare] Login verification code",
+                  "snippet": "Your Cloudflare security verification code is 886096. Valid for 10 minutes.",
+                  "category": "OTP",
+                  "receivedAt": "2026-11-24T13:55:22.285Z",
+                  "isRead": false,
+                  "bucket": "noise",
+                  "reason": "Automated verification passcode (886096) — safe to archive or clean up."
+                },
+                {
+                  "mailId": "mail_a219a918cd9f",
+                  "fromName": "Stripe Auth",
+                  "fromEmail": "verify@stripe.com",
+                  "subject": "Your Stripe 2FA one-time passcode",
+                  "snippet": "Use one-time passcode 774120 to access your Stripe Dashboard.",
+                  "category": "OTP",
+                  "receivedAt": "2026-11-24T03:55:09.818Z",
+                  "isRead": false,
+                  "bucket": "noise",
+                  "reason": "Automated verification passcode (774120) — safe to archive or clean up."
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T14:03:40.502Z",
+      "updatedAt": "2026-11-24T14:03:41.120Z"
+    },
+    {
+      "id": "chat_71f0bd5bbbe1",
+      "userId": "user_demo_primary",
+      "title": "/cleanup @category:OTP",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_1600f7bcd3ac",
+          "role": "user",
+          "content": "/cleanup @category:OTP",
+          "createdAt": "2026-11-24T13:55:35.251Z"
+        },
+        {
+          "id": "msg_a4365bbce76a",
+          "role": "assistant",
+          "content": "Found 4 verification emails under @category:OTP. Review the detected codes below and confirm if you want to permanently delete them.",
+          "createdAt": "2026-11-24T13:55:35.251Z",
+          "actionPreview": {
+            "type": "otp_cleanup_preview",
+            "count": 4,
+            "items": [
+              {
+                "id": "mail_35c291b10d72",
+                "fromName": "Cloudflare Auth",
+                "fromEmail": "no-reply@cloudflare.com",
+                "subject": "[Cloudflare] Login verification code",
+                "otpCode": "886096",
+                "receivedAt": "2026-11-24T13:55:22.285Z"
+              },
+              {
+                "id": "mail_6b2b4068036e",
+                "fromName": "GitHub Security",
+                "fromEmail": "noreply@github.com",
+                "subject": "[GitHub] Please verify your device",
+                "otpCode": "482913",
+                "receivedAt": "2026-11-24T04:43:09.818Z"
+              },
+              {
+                "id": "mail_a219a918cd9f",
+                "fromName": "Stripe Auth",
+                "fromEmail": "verify@stripe.com",
+                "subject": "Your Stripe 2FA one-time passcode",
+                "otpCode": "774120",
+                "receivedAt": "2026-11-24T03:55:09.818Z"
+              },
+              {
+                "id": "mail_aa7e265a26ae",
+                "fromName": "AWS IAM Identity",
+                "fromEmail": "no-reply@signin.aws",
+                "subject": "AWS verification code: 901482",
+                "otpCode": "901482",
+                "receivedAt": "2026-11-24T01:37:09.818Z"
+              }
+            ],
+            "cleaned": false
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T13:55:35.251Z",
+      "updatedAt": "2026-11-24T13:55:35.251Z"
+    },
+    {
+      "id": "chat_9bd0513b5c26",
+      "userId": "user_demo_primary",
+      "title": "/otp",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_65c711b88d1f",
+          "role": "user",
+          "content": "/otp",
+          "createdAt": "2026-11-24T13:54:49.500Z"
+        },
+        {
+          "id": "msg_7b1a07fb04ed",
+          "role": "assistant",
+          "content": "Active verification code for GitHub is ready below.",
+          "createdAt": "2026-11-24T13:54:49.502Z",
+          "actionPreview": {
+            "type": "otp_surface_card",
+            "vaultId": "otp_a3c0f5ebe44a",
+            "serviceName": "GitHub",
+            "otpCode": "482913",
+            "expiresAt": "2026-11-24T14:06:22.955Z",
+            "isUsed": false
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T13:54:49.500Z",
+      "updatedAt": "2026-11-24T13:54:49.502Z"
+    },
+    {
+      "id": "chat_f5a2dade0f39",
+      "userId": "user_demo_primary",
+      "title": "hello schedule an email",
+      "pinned": false,
+      "messages": [
+        {
+          "id": "msg_cc471b0f0ad0",
+          "role": "user",
+          "content": "hello schedule an email",
+          "createdAt": "2026-11-24T05:07:28.804Z"
+        },
+        {
+          "id": "msg_645df20b98bc",
+          "role": "assistant",
+          "content": "Commands require an explicit `/` action (such as `/schedule`, `/draft`, `/categorize`, `/cleanup-otp`) or `@` context mention (such as `@alex@acme.dev` or `@category:OTP`). Type `/` or `@` in the prompt bar to select a command.",
+          "createdAt": "2026-11-24T05:07:28.804Z",
+          "requiresTriggerHint": true
+        },
+        {
+          "id": "msg_c126a52c6714",
+          "role": "user",
+          "content": "/cleanup-otp @category:OTP",
+          "createdAt": "2026-11-24T05:07:42.955Z"
+        },
+        {
+          "id": "msg_41ba52377856",
+          "role": "assistant",
+          "content": "Found 3 verification emails under @category:OTP. Review the detected codes below and confirm if you want to permanently delete them.",
+          "createdAt": "2026-11-24T05:07:42.955Z",
+          "actionPreview": {
+            "type": "otp_cleanup_preview",
+            "count": 3,
+            "items": [
+              {
+                "id": "mail_6b2b4068036e",
+                "fromName": "GitHub Security",
+                "fromEmail": "noreply@github.com",
+                "subject": "[GitHub] Please verify your device",
+                "otpCode": "482913",
+                "receivedAt": "2026-11-24T04:43:09.818Z"
+              },
+              {
+                "id": "mail_a219a918cd9f",
+                "fromName": "Stripe Auth",
+                "fromEmail": "verify@stripe.com",
+                "subject": "Your Stripe 2FA one-time passcode",
+                "otpCode": "774120",
+                "receivedAt": "2026-11-24T03:55:09.818Z"
+              },
+              {
+                "id": "mail_aa7e265a26ae",
+                "fromName": "AWS IAM Identity",
+                "fromEmail": "no-reply@signin.aws",
+                "subject": "AWS verification code: 901482",
+                "otpCode": "901482",
+                "receivedAt": "2026-11-24T01:37:09.818Z"
+              }
+            ],
+            "cleaned": false
+          }
+        }
+      ],
+      "createdAt": "2026-11-24T05:07:28.804Z",
+      "updatedAt": "2026-11-24T05:07:42.955Z"
+    },
+    {
+      "id": "chat_1b589585235c",
+      "userId": "user_demo_primary",
+      "title": "Q4 Launch Cadence & Reminders",
+      "pinned": true,
+      "createdAt": "2026-11-23T17:07:09.818Z",
+      "updatedAt": "2026-11-24T03:37:09.818Z",
+      "messages": [
+        {
+          "id": "msg_1a20ee26f224",
+          "role": "user",
+          "content": "/schedule Send Q4 rollout reminder to @sarah@northstar.io 2 times every 4 hours",
+          "createdAt": "2026-11-24T03:31:09.818Z"
+        },
+        {
+          "id": "msg_28299b242c0d",
+          "role": "assistant",
+          "content": "Prepared a 2-run schedule in UTC targeting sarah@northstar.io.",
+          "createdAt": "2026-11-24T03:37:09.818Z",
+          "actionPreview": {
+            "type": "schedule_preview",
+            "rule": {
+              "mode": "advanced",
+              "startUtc": "2026-11-24T07:07:09.818Z",
+              "freq": 2,
+              "gapValue": 4,
+              "gapUnit": "hours",
+              "recipients": [
+                "sarah@northstar.io"
+              ],
+              "subject": "Q4 Rollout Reminder",
+              "body": "Hi Sarah, checking in on the Q4 beta rollout cohort list before launch."
+            },
+            "timestampsUtc": [
+              "2026-11-24T07:07:09.818Z",
+              "2026-11-24T11:07:09.818Z"
+            ],
+            "confirmed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chat_a534e6791541",
+      "userId": "user_demo_primary",
+      "title": "Weekly OTP Hygiene Audit",
+      "pinned": true,
+      "createdAt": "2026-11-23T05:07:09.818Z",
+      "updatedAt": "2026-11-24T05:09:02.477Z",
+      "messages": [
+        {
+          "id": "msg_118d6e997ad2",
+          "role": "user",
+          "content": "/cleanup-otp Preview @category:OTP emails",
+          "createdAt": "2026-11-23T21:01:09.818Z"
+        },
+        {
+          "id": "msg_f3c4a32c41e9",
+          "role": "assistant",
+          "content": "Found 3 verification emails tagged under OTP. Review below before deleting.",
+          "createdAt": "2026-11-23T21:07:09.818Z"
+        }
+      ]
+    }
+  ]
+}
